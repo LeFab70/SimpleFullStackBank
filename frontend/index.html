@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestion de Comptes</title>
+   <link rel="stylesheet" href="./assets/style/style.css">
+  </head>
+  <body>
+    <p class="button-group">
+      <input type="button" value="Nouveau compte" onclick="creerCompte();" />
+      <input type="button" value="Modifier compte" onclick="afficherZoneModification();" />
+      <input type="button" value="Supprimer compte" onclick="afficherZoneSuppression();" />
+      <input type="button" value="Lister comptes" onclick="listerComptes();" />
+    </p>
+
+    <div id="zoneNouveauCompte">
+      <h1>Créer un compte</h1>
+      <p><label>Numéro</label><input id="txtNumero" type="text" /></p>
+      <p>
+        <label>Type</label>
+        <select id="txtTypeAccount">
+          <option>Cheque</option>
+          <option>Epargne</option>
+          <option>CELI</option>
+        </select>
+      </p>
+      <p><label>Solde</label><input id="txtSolde" type="number" /></p>
+      <p>
+        <label>Devise</label>
+        <select id="txtDevise">
+          <option>CAD</option>
+          <option>USD</option>
+          <option>EUR</option>
+        </select>
+      </p>
+      <p><label>Image</label><input id="txtImageN" type="text" /></p>
+      <p><input type="button" value="Enregistrer" onclick="enregistrer();" /></p>
+    </div>
+
+    <div id="zoneModificationCompte">
+      <h1>Créditer / Débiter un compte</h1>
+      <p><label>Numéro</label><input id="txtIdM" type="text" /></p>
+      <p><input type="button" value="Rechercher" onclick="rechercherCompte();" /></p>
+      <p><label>Type</label><input id="txtDescriptionM" disabled /></p>
+      <p><label>Montant</label><input id="txtPrixM" type="number" /></p>
+      <p><label>Image</label><input id="txtImageM" disabled /></p>
+      <p><label>Devise</label><input id="txtDetailM" disabled /></p>
+      <p>
+        <input type="button" value="Créditer" onclick="crediterCompte();" />
+        <input type="button" value="Débiter" onclick="debiterCompte();" />
+      </p>
+    </div>
+
+    <div id="zoneSuppressionCompte">
+      <h1>Suppression d'un compte</h1>
+      <p><label>Numéro</label><input id="txtIdS" type="text" /></p>
+      <p><input type="button" value="Rechercher" onclick="rechercherCompteASupprimer();" /></p>
+      <p><label>Type</label><input id="txtDescriptionS" disabled /></p>
+      <p><label>Solde</label><input id="txtPrixS" disabled /></p>
+      <p><label>Image</label><input id="txtImageS" disabled /></p>
+      <p><label>Devise</label><input id="txtDetailS" disabled /></p>
+      <p><input type="button" value="Supprimer" onclick="supprimerCompte();" /></p>
+    </div>
+
+    <div id="zoneListeCompte">
+      <h1>Liste des comptes</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Numéro</th>
+            <th>Type</th>
+            <th>Solde</th>
+            <th>Devise</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody id="idCorpsTableau"></tbody>
+      </table>
+    </div>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
