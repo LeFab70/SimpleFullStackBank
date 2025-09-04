@@ -3,44 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <title>Gestion de Comptes</title>
-   <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/style.css" />
   </head>
   <body>
     <p class="button-group">
-      <input type="button" value="Nouveau compte" onclick="creerCompte();" />
-      <input type="button" value="Modifier compte" onclick="afficherZoneModification();" />
-      <input type="button" value="Supprimer compte" onclick="afficherZoneSuppression();" />
-      <input type="button" value="Lister comptes" onclick="listerComptes();" />
+      <input type="button" value="Nouveau compte" />
+      <input type="button" value="Modifier compte" />
+      <input type="button" value="Supprimer compte" />
+      <input type="button" value="Lister comptes" />
     </p>
 
     <div id="zoneNouveauCompte">
       <h1>Créer un compte</h1>
-      <p><label>Numéro</label><input id="txtNumero" type="text" /></p>
-      <p>
-        <label>Type</label>
-        <select id="txtTypeAccount">
-          <option>Cheque</option>
-          <option>Epargne</option>
-          <option>CELI</option>
-        </select>
-      </p>
-      <p><label>Solde</label><input id="txtSolde" type="number" /></p>
-      <p>
-        <label>Devise</label>
-        <select id="txtDevise">
-          <option>CAD</option>
-          <option>USD</option>
-          <option>EUR</option>
-        </select>
-      </p>
-      <p><label>Image</label><input id="txtImageN" type="text" /></p>
-      <p><input type="button" value="Enregistrer" onclick="enregistrer();" /></p>
+      <form id="saveAccountForm">
+        <p>
+          <label>Numéro</label
+          ><input id="txtNumero" type="text" name="numero" />
+        </p>
+        <p>
+          <label>Type</label>
+          <select id="txtTypeAccount" name="typeCompte">
+            <option>Cheque</option>
+            <option>Epargne</option>
+            <option>CELI</option>
+          </select>
+        </p>
+        <p>
+          <label>Solde</label><input id="txtSolde" type="number" name="solde" />
+        </p>
+        <p>
+          <label>Devise</label>
+          <select id="txtDevise" name="devise">
+            <option>CAD</option>
+            <option>USD</option>
+            <option>EUR</option>
+          </select>
+        </p>
+        <p>
+          <label>Image</label><input id="txtImageN" type="file" name="image" />
+        </p>
+        <p><input type="submit" value="Enregistrer" /></p>
+      </form>
     </div>
 
     <div id="zoneModificationCompte">
       <h1>Créditer / Débiter un compte</h1>
       <p><label>Numéro</label><input id="txtIdM" type="text" /></p>
-      <p><input type="button" value="Rechercher" onclick="rechercherCompte();" /></p>
+      <p>
+        <input type="button" value="Rechercher" onclick="rechercherCompte();" />
+      </p>
       <p><label>Type</label><input id="txtDescriptionM" disabled /></p>
       <p><label>Montant</label><input id="txtPrixM" type="number" /></p>
       <p><label>Image</label><input id="txtImageM" disabled /></p>
@@ -54,12 +65,20 @@
     <div id="zoneSuppressionCompte">
       <h1>Suppression d'un compte</h1>
       <p><label>Numéro</label><input id="txtIdS" type="text" /></p>
-      <p><input type="button" value="Rechercher" onclick="rechercherCompteASupprimer();" /></p>
+      <p>
+        <input
+          type="button"
+          value="Rechercher"
+          onclick="rechercherCompteASupprimer();"
+        />
+      </p>
       <p><label>Type</label><input id="txtDescriptionS" disabled /></p>
       <p><label>Solde</label><input id="txtPrixS" disabled /></p>
       <p><label>Image</label><input id="txtImageS" disabled /></p>
       <p><label>Devise</label><input id="txtDetailS" disabled /></p>
-      <p><input type="button" value="Supprimer" onclick="supprimerCompte();" /></p>
+      <p>
+        <input type="button" value="Supprimer" onclick="supprimerCompte();" />
+      </p>
     </div>
 
     <div id="zoneListeCompte">
@@ -77,6 +96,6 @@
         <tbody id="idCorpsTableau"></tbody>
       </table>
     </div>
-    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/index.js" type="module"></script>
   </body>
 </html>

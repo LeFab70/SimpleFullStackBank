@@ -9,7 +9,7 @@ body {
   color: #333;
   min-height: 100vh;
   position: relative;
-  padding-top: 80px; 
+  padding-top: 80px;
 }
 /* === En-tête === */
 #entete {
@@ -33,18 +33,24 @@ body {
 
 /* === Zone principale des comptes === */
 
-#zoneModificationCompte,
+/* #zoneModificationCompte,
 #zoneSuppressionCompte,
 #zoneListeCompte {
   display: none;
  
-}
+} */
 #zoneNouveauCompte,
 #zoneModificationCompte,
 #zoneSuppressionCompte,
 #zoneListeCompte {
-
   padding: 0 100px;
+}
+
+.displayBloc {
+  display: block;
+}
+.displayNone {
+  display: none;
 }
 
 /* === Tableau stylisé pour affichage des comptes === */
@@ -63,14 +69,14 @@ th {
   background-color: #4caf50;
   color: white;
   padding: 12px;
-  text-align: center;
+  /* text-align: center; */
   font-weight: 600;
   font-size: 16px;
 }
 
 td {
   padding: 12px;
-  text-align: left;
+  /* text-align: left; */
   border-bottom: 1px solid #eee;
   background-color: #fff;
   font-size: 14px;
@@ -91,11 +97,10 @@ form {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  max-width: 300px; 
-  width: 100%;      
-  margin: 30px auto; 
+  /* max-width: 300px;  */
+  width: 100%;
+  margin: 30px auto;
 }
-
 
 h1 {
   color: #333;
@@ -134,7 +139,9 @@ select:focus {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-form input[type="button"],div input[type="button"] {
+form input[type="button"],
+div input[type="button"],
+form input[type="submit"] {
   background-color: #007bff;
   color: white;
   padding: 12px 20px;
@@ -147,7 +154,8 @@ form input[type="button"],div input[type="button"] {
   transition: background-color 0.3s ease;
 }
 
-form input[type="button"]:hover {
+form input[type="button"]:hover,
+form/input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
