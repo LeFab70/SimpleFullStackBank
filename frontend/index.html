@@ -10,7 +10,7 @@
       <input type="button" value="Nouveau compte" />
       <input type="button" value="Modifier compte" />
       <input type="button" value="Supprimer compte" />
-      <input type="button" value="Lister comptes" />
+      <input type="button" value="Lister comptes"  id="listAccount"/>
     </p>
 
     <div id="zoneNouveauCompte">
@@ -50,15 +50,15 @@
       <h1>Créditer / Débiter un compte</h1>
       <p><label>Numéro</label><input id="txtIdM" type="text" /></p>
       <p>
-        <input type="button" value="Rechercher" onclick="rechercherCompte();" />
+        <input type="button" value="Rechercher" id="searchAccountToModified" />
       </p>
       <p><label>Type</label><input id="txtDescriptionM" disabled /></p>
       <p><label>Montant</label><input id="txtPrixM" type="number" /></p>
       <p><label>Image</label><input id="txtImageM" disabled /></p>
       <p><label>Devise</label><input id="txtDetailM" disabled /></p>
       <p>
-        <input type="button" value="Créditer" onclick="crediterCompte();" />
-        <input type="button" value="Débiter" onclick="debiterCompte();" />
+        <input type="button" value="Créditer" id="creditAccount" />
+        <input type="button" value="Débiter" id="debitAccount" />
       </p>
     </div>
 
@@ -69,7 +69,8 @@
         <input
           type="button"
           value="Rechercher"
-          onclick="rechercherCompteASupprimer();"
+          id ="searchAccountToDelete"
+         
         />
       </p>
       <p><label>Type</label><input id="txtDescriptionS" disabled /></p>
@@ -77,7 +78,7 @@
       <p><label>Image</label><input id="txtImageS" disabled /></p>
       <p><label>Devise</label><input id="txtDetailS" disabled /></p>
       <p>
-        <input type="button" value="Supprimer" onclick="supprimerCompte();" />
+        <input type="button" value="Supprimer" id="deleteAccount" />
       </p>
     </div>
 
